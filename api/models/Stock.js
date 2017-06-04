@@ -1,25 +1,25 @@
 /**
- * Customer.js
+ * Stock.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
+
 module.exports = {
+
   attributes: {
-    name: {
+    symbol: {
       type: 'string',
       required: true
     },
-    email:{
-      type: 'string',
-      email: true
+    number_of_shares: {
+      type: 'float',
+      required: true
     },
-    state:{
-      type:'string'
-    },
-    stocks: {
-      collection:'stock',
-      via: 'owner'
+    owner: {
+      model: 'customer',
+      required: true
     }
   }
 };
+
